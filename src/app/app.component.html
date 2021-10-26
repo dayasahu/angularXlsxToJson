@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Seat allocator</h1>
+    <p>Please select upload the sheet and click on allocate to allot from the available seats</p>
+  </div>
+
+<div style="margin-top: 2%;margin-left: 2%;margin-right: 2%;">
+
+ 
+<input type="file"    (change)="onFileChange($event)"  #uploader />
+<button class="btn btn-primary" (click)="allocateSeats()">allocate Seats</button>
+
+<table  class="table table-hover"> 
+  <thead>
+    <tr>
+      <th> S.No</th>
+      <th>Request Id</th>
+      <th>SoeId</th>
+      <th>App Id</th>
+      <th>Alloted Seat</th>
+      </tr>
+  
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of cells" >
+  
+    <td >{{c.SNo}}</td>
+    <td >{{c.RequestId}}</td>
+    <td >{{c.SoeId}}</td>
+    <td >{{c.AppId}}</td>
+    <td >{{c.AllotedSeat}}</td>
+    
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
